@@ -3,6 +3,7 @@ package net.thisisz.upi.common.api;
 import java.lang.reflect.Method;
 
 import net.thisisz.upi.UniversalPlayerInterface;
+import net.thisisz.upi.api.UniversalPlayerInterfaceApi;
 
 public class ApiSingletonUtils {
     private static final Method REGISTER;
@@ -24,7 +25,7 @@ public class ApiSingletonUtils {
         UNREGISTER = unregister;
     }
 
-    public static void registerProvider(UniversalPlayerInterfacermsApi universalPlayerInterfaceApi) {
+    public static void registerProvider(UniversalPlayerInterfaceApi universalPlayerInterfaceApi) {
         try {
             REGISTER.invoke(null, universalPlayerInterfaceApi);
         } catch (Exception e) {

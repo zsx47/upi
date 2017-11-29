@@ -42,6 +42,13 @@
             <version>${project.version}</version>
             <scope>compile</scope>
         </dependency>
+        <!-- UPI Common -->
+        <dependency>
+            <groupId>net.thisisz.upi</groupId>
+            <artifactId>upi-common</artifactId>
+            <version>${project.version}</version>
+            <scope>compile</scope>
+        </dependency>
         <!-- RedisBungee -->
         <dependency>
             <groupId>com.imaginarycode.minecraft</groupId>

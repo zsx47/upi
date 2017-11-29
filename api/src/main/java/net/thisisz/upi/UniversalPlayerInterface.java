@@ -10,7 +10,7 @@ public final class UniversalPlayerInterface {
 
     private static UniversalPlayerInterfaceApi instance = null;
 
-    @NonNull
+    @Nonnull
     public static Optional<UniversalPlayerInterfaceApi> getApi() {
         return Optional.ofNullable(instance);
     }
