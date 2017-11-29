@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>net.thisisz.upi</groupId>
+	<artifactId>upi</artifactId>
+    <packaging>pom</packaging>
+    <version>0.1-SNAPSHOT</version>
+
+	<modules>
+        <module>api</module>
+        <module>common</module>
+        <module>bungee</module>
+    </modules>
+
+	<name>Universal Player Interface</name>
+	<description>A universal player interface that allows for player specific actions across networks of servers via messaging services like redis.</description>
+	<url>https://github.com/zsx47/upi</url>
+
+	<licenses>
+		<license>
+			<name>GNU General Public License, v3.0</name>
+            <url>http://www.gnu.org/licenses/gpl-3.0.html</url>
+        </license>
+	</licenses>
+	
+	<developers>
+		<developer>
+			<name>zsx47</name>
+			<url>https://github.com/zsx47</url>
+		</developer>
+	</developers>
+
+    <issueManagement>
+        <url>https://github.com/zsx47/upi/issues</url>
+    </issueManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>pl.project13.maven</groupId>
+                <artifactId>git-commit-id-plugin</artifactId>
+                <version>2.2.2</version>
+                <executions>
+                    <execution>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>revision</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <skipPoms>false</skipPoms>
+                    <injectAllReactorProjects>true</injectAllReactorProjects>
+                    <runOnlyOnce>true</runOnlyOnce>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <skipTests>true</skipTests>
+        <maven.test.skip>true</maven.test.skip>
+
+        <release.version>0.1-SNAPSHOT</release.version>
+
+        <patch.version>${git.closest.tag.commit.count}</patch.version>
+
+        <full.version>${release.version}.${patch.version}</full.version>
+
+        <compiler.version>3.7.0</compiler.version>
+        <shade.version>3.1.0</shade.version>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>luck-repo</id>
+            <url>https://repo.lucko.me/</url>
+        </repository>
+        <repository>
+            <id>spigot-repo</id>
+            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+        </repository>
+        <repository>
+            <id>sponge-repo</id>
+            <url>https://repo.spongepowered.org/maven</url>
+        </repository>
+    </repositories>
+
+</project>
